@@ -9,7 +9,12 @@
     "app": {
       "type": "file",
       "filename": "log/app.log",
-      "maxLogSize": 10485760,
+      "layout": {
+        "type": "pattern",
+        "pattern": "%d %p %h %f{2}:%l  %m %n "
+      },
+      "compress": true,
+      "maxLogSize": 1000000,
       "numBackups": 3
     },
     "errorFile": {
@@ -23,7 +28,7 @@
     }
   },
   "categories": {
-    "default": { "appenders": [ "app", "errors" ], "level": "DEBUG" },
+    "default": { "appenders": [ "app", "errors" ], "level": "DEBUG","enableCallStack": true },
     "http": { "appenders": [ "access"], "level": "DEBUG" }
   }
 }

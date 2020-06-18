@@ -3,7 +3,7 @@ configure("src/config/logging/log4js.json");
 export class ApplicationLogger{
 
     public  static getAppLogger(name:string) : Logger{
-        return  getLogger("name");
+        return  getLogger(name);
     }
 }
 export default ApplicationLogger;

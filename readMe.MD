@@ -10,3 +10,27 @@
     * Execute below command in project directory where package.json file is present
        ``` npm install
        ```
+    * For access logging in type script : Follow : https://github.com/log4js-node/log4js-node/blob/master/docs/connect-logger.md
+        ```
+        var log4js = require('log4js');
+        var express = require('express');
+        
+        log4js.configure({
+         appenders: {
+           console: { type: 'console' },
+           file: { type: 'file', filename: 'cheese.log' }
+         },
+         categories: {
+           cheese: { appenders: ['file'], level: 'info' },
+           default: { appenders: ['console'], level: 'info' }
+         }
+        });
+        
+        var logger = log4js.getLogger('cheese');
+        var app = express();
+        app.use(log4js.connectLogger(logger, { level: 'info' }));
+        app.get('/', function(req,res) {
+          res.send('hello world');
+        });
+        app.listen(5000);
+        ```

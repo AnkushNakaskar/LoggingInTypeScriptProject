@@ -3,14 +3,13 @@ import {ApplicationLogger} from '@logging/Logger';
 import {plainToClass} from "class-transformer";
 
 
-let logger=ApplicationLogger.getAppLogger("main");
+let logger=ApplicationLogger.getAppLogger("http");
 
 
 function convertJsonInputToObject(inputJsonString:string) {
 
     try {
         logger.info("Logger for file..this is new...")
-        logger.error("Error level in logging")
     }catch (e) {
         logger.error("Exception in logging")
     }
