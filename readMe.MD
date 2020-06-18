@@ -10,7 +10,7 @@
 * Execute below command in project directory where package.json file is present
        ``` npm install
        ```
-  * For access logging in type script : Follow : https://github.com/log4js-node/log4js-node/blob/master/docs/connect-logger.md
+* For access logging in type script : Follow : https://github.com/log4js-node/log4js-node/blob/master/docs/connect-logger.md
    ```
         var log4js = require('log4js');
         var express = require('express');
